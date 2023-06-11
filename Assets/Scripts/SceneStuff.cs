@@ -7,10 +7,11 @@ public class SceneStuff : MonoBehaviour
 {
     public ObjectScript objectScript;
     public string NextScene;
+    private bool ReadTutorial = false;
 
     void Start()
     {
-        
+         
     }
 
     public void howToPlay(bool variable)
@@ -22,6 +23,20 @@ public class SceneStuff : MonoBehaviour
     public void toNextScene()
     {
         SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
+    }
+
+    public void StartScene(bool variable)
+    {
+        if(ReadTutorial==false) 
+        {
+            objectScript.TutorialPanel.SetActive(variable);
+            objectScript.TutorialGroup.SetActive(variable);
+            ReadTutorial = true;
+        }
+        else
+        {
+            SceneManager.LoadScene(NextScene, LoadSceneMode.Single);
+        }
     }
 
     public void exit()
