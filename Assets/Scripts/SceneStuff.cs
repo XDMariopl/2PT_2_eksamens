@@ -7,7 +7,6 @@ public class SceneStuff : MonoBehaviour
 {
     public ObjectScript objectScript;
     public string NextScene;
-    private bool ReadTutorial = false;
 
     void Start()
     {
@@ -27,11 +26,11 @@ public class SceneStuff : MonoBehaviour
 
     public void StartScene(bool variable)
     {
-        if(ReadTutorial==false) 
+        if(StaticVariables.ReadTutorial==false) 
         {
             objectScript.TutorialPanel.SetActive(variable);
             objectScript.TutorialGroup.SetActive(variable);
-            ReadTutorial = true;
+            StaticVariables.ReadTutorial = true;
         }
         else
         {
@@ -42,6 +41,13 @@ public class SceneStuff : MonoBehaviour
     public void exit()
     {
         Application.Quit();
+    }
+
+    public void Restart()
+    {
+        StaticVariables.Q = 0;
+        StaticVariables.WrongQ = 0;
+        SceneManager.LoadScene("Start_scene",LoadSceneMode.Single);
     }
 }
 

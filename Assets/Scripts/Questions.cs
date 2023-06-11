@@ -22,6 +22,7 @@ public class Questions : MonoBehaviour {
                 objectScript.nextButton.SetActive(true);
                 i=objectScript.WrongToggle.Length;
                 wrong = true;
+                StaticVariables.WrongQ++;
             }
         }
 
@@ -40,10 +41,14 @@ public class Questions : MonoBehaviour {
                 objectScript.AnswerPanel.SetActive(true);
                 objectScript.nextButton.SetActive(true);
             }
+            else
+            {
+                objectScript.WrongPanel.SetActive(true);
+                objectScript.WrongGroup.SetActive(true);
+                objectScript.nextButton.SetActive(true);
+                StaticVariables.WrongQ++;
+            }
         }
+        StaticVariables.Q++;
     }
- 
-
-
-
 }
