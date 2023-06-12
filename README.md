@@ -3,5 +3,5 @@ Tema:Viendimensiju masīvi strādājot ar C# programmēšanas valodu Unity dzin�
 
 
 ## Uzdevumi
-- [ ] Apmacošais marterials
-- [ ] testa programatūra 
+- [x] Apmacošais marterials
+- [x] Testa programatūra 
